@@ -1,3 +1,4 @@
+import * as fs from "fs";
 import * as papa from "papaparse";
 
 const CURRENCY_COL = "[CURRENCY]";
@@ -162,7 +163,9 @@ const filterRowFromYear = (
 
 // Main function
 if (require.main === module) {
-  console.time("applyCurrencyConversionAndColFiltering");
-  applyCurrencyConversionAndColFiltering();
-  console.timeEnd("applyCurrencyConversionAndColFiltering");
+  const dataFile = fs.createReadStream("data/data_small.csv");
+  console.log(dataFile);
+  // console.time("applyCurrencyConversionAndColFiltering");
+  // applyCurrencyConversionAndColFiltering();
+  // console.timeEnd("applyCurrencyConversionAndColFiltering");
 }
